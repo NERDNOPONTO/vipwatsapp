@@ -1,145 +1,442 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curso Gratuito de Marketing de Vendas</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Convite para Grupo de WhatsApp - Curso de Marketing de Vendas</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
+        
         body {
+            background: #000000;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #8218ff, #000000, #8118ff);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
+            overflow: hidden;
         }
-
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
+        
         .container {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 0 30px rgba(130, 24, 255, 0.5);
-            max-width: 600px;
             width: 90%;
-            text-align: center;
-            transform: scale(0.95);
-            transition: all 0.3s ease;
-        }
-
-        .container:hover {
-            transform: scale(1);
-            box-shadow: 0 0 50px rgba(130, 24, 255, 0.8);
-        }
-
-        h1 {
-            color: #fff;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 0 0 15px #8218ff;
-            animation: textGlow 2s ease-in-out infinite;
-        }
-
-        @keyframes textGlow {
-            50% { text-shadow: 0 0 25px #a64cff; }
-        }
-
-        .content {
-            color: #fff;
-            margin: 1.5rem 0;
-            line-height: 1.6;
-        }
-
-        .whatsapp-btn {
-            display: inline-flex;
+            max-width: 500px;
+            height: 600px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(130, 24, 255, 0.7);
+            background: linear-gradient(135deg, #8218ff, #000000, #8118ff);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
             align-items: center;
-            padding: 1rem 2rem;
-            background: #25D366;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            animation: pulse 2s infinite;
+            justify-content: space-between;
         }
 
-        .whatsapp-btn:hover {
-            background: #128C7E;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(18, 140, 126, 0.4);
+        .floating-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
         }
 
-        .whatsapp-btn i {
-            margin-right: 10px;
-            font-size: 1.5rem;
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: float 15s infinite linear;
         }
 
-        .benefits-list {
-            list-style: none;
-            margin: 2rem 0;
+        @keyframes float {
+            0% {
+                transform: translateY(100%) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100%) rotate(360deg);
+                opacity: 0;
+            }
         }
 
-        .benefits-list li {
-            padding: 0.8rem;
-            margin: 0.5rem 0;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            transform: translateX(-20px);
-            opacity: 0;
-            animation: slideIn 0.5s forwards;
+        .header {
+            width: 100%;
+            text-align: center;
+            z-index: 2;
+            position: relative;
+            margin-top: 20px;
         }
 
-        @keyframes slideIn {
-            to { transform: translateX(0); opacity: 1; }
+        .logo {
+            width: 80px;
+            height: 80px;
+            background-color: #ffffff;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 15px;
+            animation: pulse 2s infinite ease-in-out;
+            box-shadow: 0 0 20px rgba(130, 24, 255, 0.5);
         }
 
         @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 20px rgba(130, 24, 255, 0.5);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 30px rgba(130, 24, 255, 0.8);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 20px rgba(130, 24, 255, 0.5);
+            }
+        }
+
+        .logo svg {
+            width: 50px;
+            height: 50px;
+            fill: #8218ff;
+        }
+
+        .title {
+            color: white;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .subtitle {
+            color: white;
+            font-size: 18px;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .content {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border-radius: 15px;
+            width: 100%;
+            z-index: 2;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .benefits {
+            text-align: left;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .benefits-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            transition: transform 0.3s;
+        }
+
+        .benefit-item:hover {
+            transform: translateX(5px);
+        }
+
+        .check-icon {
+            color: #8218ff;
+            background-color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        .cta {
+            margin-top: 30px;
+            text-align: center;
+            z-index: 2;
+            position: relative;
+            width: 100%;
+        }
+
+        .join-button {
+            background-color: white;
+            color: #8218ff;
+            font-size: 18px;
+            font-weight: 700;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 80%;
+            margin-bottom: 15px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .join-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .join-button::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 150%;
+            height: 150%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%) scale(0);
+            border-radius: 50%;
+            transition: transform 0.5s;
+        }
+
+        .join-button:active::after {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 0;
+            transition: transform 0.5s, opacity 0.5s;
+        }
+
+        .countdown {
+            color: white;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .timer-box {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 8px;
+            border-radius: 8px;
+            min-width: 50px;
+            text-align: center;
+        }
+
+        .timer-value {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .timer-label {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+
+        .footer {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 12px;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            z-index: 2;
+            position: relative;
         }
 
         @media (max-width: 480px) {
-            h1 { font-size: 2rem; }
-            .content { font-size: 0.9rem; }
+            .container {
+                height: auto;
+                min-height: 550px;
+            }
+            .title {
+                font-size: 24px;
+            }
+            .subtitle {
+                font-size: 16px;
+            }
+            .benefits-title {
+                font-size: 18px;
+            }
+            .join-button {
+                padding: 12px 30px;
+                font-size: 16px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🚀 Curso Gratuito de Marketing de Vendas 🚀</h1>
+        <div class="floating-particles" id="particles"></div>
+        
+        <div class="header">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.72.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 1.856.001 3.598.723 4.907 2.034 1.31 1.311 2.031 3.054 2.03 4.908-.001 3.825-3.113 6.938-6.937 6.938z"/>
+                </svg>
+            </div>
+            <h1 class="title">CURSO GRATUITO</h1>
+            <h2 class="subtitle">Marketing de Vendas</h2>
+        </div>
         
         <div class="content">
-            <p>Aprenda as melhores estratégias para alavancar suas vendas!</p>
-            <p>▶️ Início: 16 / 05 2025</p>
-            <p>⏰ Duração: 2 Dias</p>
+            <div class="benefits">
+                <div class="benefits-title">O que você vai aprender:</div>
+                <div class="benefit-item">
+                    <div class="check-icon">✓</div>
+                    <div>Estratégias de marketing digital</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="check-icon">✓</div>
+                    <div>Técnicas de copywriting para conversão</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="check-icon">✓</div>
+                    <div>Funis de vendas que convertem</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="check-icon">✓</div>
+                    <div>Automação de processos de vendas</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="check-icon">✓</div>
+                    <div>Mentorias exclusivas com especialistas</div>
+                </div>
+            </div>
         </div>
-
-        <ul class="benefits-list">
-            <li><i class="fas fa-check"></i> Aulas Práticas e Objetivas</li>
-            <li><i class="fas fa-check"></i> Certificado Gratuito</li>
-            <li><i class="fas fa-check"></i> Suporte com Especialistas</li>
-            <li><i class="fas fa-check"></i> Material Complementar</li>
-        </ul>
-
-        <a href="https://chat.whatsapp.com/JOQjgdEno0lKn8rEHiBCqy" class="whatsapp-btn" target="_blank">
-            <i class="fab fa-whatsapp"></i> Entrar no Grupo
-        </a>
+        
+        <div class="cta">
+            <button class="join-button" id="joinButton">ENTRAR NO GRUPO</button>
+            <div class="countdown">
+                <div>As vagas são limitadas! Encerra em:</div>
+                <div class="timer">
+                    <div class="timer-box">
+                        <div class="timer-value" id="hours">24</div>
+                        <div class="timer-label">Horas</div>
+                    </div>
+                    <div class="timer-box">
+                        <div class="timer-value" id="minutes">00</div>
+                        <div class="timer-label">Min</div>
+                    </div>
+                    <div class="timer-box">
+                        <div class="timer-value" id="seconds">00</div>
+                        <div class="timer-label">Seg</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            © 2025 · Curso de Marketing de Vendas · Todos os direitos reservados
+        </div>
     </div>
+
+    <script>
+        // Criar partículas flutuantes
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 15;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Tamanho aleatório
+                const size = Math.random() * 8 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Posição aleatória
+                const posX = Math.random() * 100;
+                const delay = Math.random() * 15;
+                
+                particle.style.left = `${posX}%`;
+                particle.style.animationDelay = `${delay}s`;
+                particle.style.animationDuration = `${15 + Math.random() * 10}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        // Contador regressivo
+        function startCountdown() {
+            const hoursElement = document.getElementById('hours');
+            const minutesElement = document.getElementById('minutes');
+            const secondsElement = document.getElementById('seconds');
+            
+            let hours = 24;
+            let minutes = 0;
+            let seconds = 0;
+            
+            function updateCountdown() {
+                seconds--;
+                
+                if (seconds < 0) {
+                    seconds = 59;
+                    minutes--;
+                    
+                    if (minutes < 0) {
+                        minutes = 59;
+                        hours--;
+                        
+                        if (hours < 0) {
+                            hours = 0;
+                            minutes = 0;
+                            seconds = 0;
+                            clearInterval(countdownInterval);
+                        }
+                    }
+                }
+                
+                hoursElement.textContent = hours.toString().padStart(2, '0');
+                minutesElement.textContent = minutes.toString().padStart(2, '0');
+                secondsElement.textContent = seconds.toString().padStart(2, '0');
+            }
+            
+            const countdownInterval = setInterval(updateCountdown, 1000);
+        }
+        
+        // Botão de entrada
+        function setupJoinButton() {
+            const joinButton = document.getElementById('joinButton');
+            
+            joinButton.addEventListener('click', function() {
+                // Aqui você pode adicionar o link para o grupo do WhatsApp
+                alert('Redirecionando para o grupo do WhatsApp...');
+                window.location.href = 'https://chat.whatsapp.com/JOQjgdEno0lKn8rEHiBCqy';
+            });
+        }
+        
+        // Inicializar
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            startCountdown();
+            setupJoinButton();
+        });
+    </script>
 </body>
 </html>
